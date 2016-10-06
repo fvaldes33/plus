@@ -46,13 +46,13 @@ class CraftPlusService extends BaseApplicationComponent
 
             if ($file) {
                 if ( IOHelper::writeToFile($behaviorFile, $this->blankBehavior($name, $type))) {
-                    echo $name . ' created';
+                    echo 'Behavior ' . $name . ' for ' . $type . ' created!';
                     exit;
                 }
             }
 
         } else {
-            echo 'File Already Exists... Exit';
+            echo 'File ' . $name . ' in ' . $type . ' Already Exists... Exit';
             exit;
         }
     
