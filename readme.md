@@ -26,21 +26,21 @@ This allows you to create your own behaviors and services outside of the plugin 
 as all it does is attach the behaviors you create. 
 
 Folder Structure:
-    - plus
-        - Behaviors
-            - Assets
-            - Categories
-            - Entries
-            - Globals
-            - MatrixBlocks
-            - Traits
-        - Services
-            - LogService.php **
+- plus
+    - Behaviors
+        - Assets
+        - Categories
+        - Entries
+        - Globals
+        - MatrixBlocks
+        - Traits
+    - Services
+        - LogService.php **
 
 Log Service is for basic debugging. 
 Usage: 
-    - Twig: {{ plus.log.write(key, value) }}
-    - PHP: craft()->craftPlus->log('hello', 'world');
+- Twig: {{ plus.log.write(key, value) }}
+- PHP: craft()->craftPlus->log('hello', 'world');
 
 ### How does it work?
 
