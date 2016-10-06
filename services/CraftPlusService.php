@@ -28,6 +28,37 @@ class CraftPlusService extends BaseApplicationComponent
         $logger->write($key, $data);
     }
 
+
+    /**
+     * Create Behaviors
+     *
+     * @param $name BehaviorName
+     * @param $type ElementType
+     *
+     * @return bool
+     */
+    public function createBehavior($name, $type)
+    {
+        $behaviorFile = $this->behaviorPath($type, $name);
+        
+        if (!IOHelper::fileExists($behaviorFile)) {
+            $file = IOHelper::createFile($behaviorFile);
+
+            if ($file) {
+                if ( IOHelper::writeToFile($behaviorFile, $this->blankBehavior($name, $type))) {
+                    echo $name . ' created';
+                    exit;
+                }
+            }
+
+        } else {
+            echo 'File Already Exists... Exit';
+            exit;
+        }
+    
+    }
+
+
     /**
      * On Populate Element Event Trigger
      *
@@ -115,5 +146,36 @@ class CraftPlusService extends BaseApplicationComponent
                 }
             break;
         }
+    }
+
+    public function behaviorPath($dir, $file)
+    {
+        return CRAFT_BASE_PATH . 'config/plus/Behaviors/' . $dir . '/' . $file . '.php';
+    }
+
+    public function blankBehavior($name, $type)
+    {
+        $baseMap = [
+            'Entries' => 'BaseEntryBehavior',
+            'Categories' => 'BaseCategoryBehavior',
+            'Globals' => 'BaseGlobalsBehavior',
+            'MatrixBlocks' => 'BaseMatrixBlocksBehavior'
+        ];
+
+        $content = "<?php 
+namespace CraftPlus\Behaviors\\". $type . "
+
+use CBehavior;
+use Craft;
+use Craft\ElementType;
+
+use function Craft\craft;
+
+class " . $name . " extends " . $baseMap[$type] . "
+{
+    
+}";
+
+        return $content;
     }
 }
