@@ -2,6 +2,8 @@
 
 ![Craft](https://img.shields.io/badge/craft-v2.6-red.svg)
 
+![PHP](https://img.shields.io/badge/php-v7.0-blue.svg)
+
 CraftPlus adds an easy to use way of attaching behaviors to your elements using Craft's own $element->attachBehavior() method. 
 In addition CraftPlus adds a useful global variable 'plus' that will expose all available services you create within the CraftPlus\Services namespace.
 
@@ -28,12 +30,17 @@ as all it does is attach the behaviors you create.
 Folder Structure:
 - plus
     - Behaviors
-        - Assets
         - Categories
+            - BaseCategoryBehavior.php
         - Entries
+            - BaseEntryBehavior.php
+            - HomepageBehavior.php
         - Globals
+            - BaseGlobalsBehavior.php
         - MatrixBlocks
+            - BaseMatrixBlocksBehavior.php
         - Traits
+            - ExampleAssetTrait.php
     - Services
         - LogService.php **
 
