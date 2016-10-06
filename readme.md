@@ -46,6 +46,8 @@ Usage:
 
 It is pretty simple. Recently CraftCms gave us the power to attach behaviors to our element instances. With this ability also came the ability to eager load related data to help with performance. Due to this update we decided to simplify how these behaviors are used and also keep them out of your twig templates. To get a bit more technical, on crafts "onPopulateElement" event, we scan and attach behviors matching some of your elements criteria.
 
+On the services end, we expose a plus global twig variable that has access to all created services inside the plus/Services directory. Take a look at our LogService example for more details on how that is used.
+
 
 ## Usage
 

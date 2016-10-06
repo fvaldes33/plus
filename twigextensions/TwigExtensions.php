@@ -7,7 +7,6 @@ use Twig_SimpleFunction;
 
 class TwigExtensions extends Twig_Extension
 {
-
     protected $env;
 
     public function getName()

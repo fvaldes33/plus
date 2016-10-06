@@ -4,15 +4,14 @@ namespace Craft;
 class CraftPlusVariable
 {
     private $classes = [];
-    protected $baseUtil = 'CraftPlus\\Util\\';
     protected $baseService = 'CraftPlus\\Services\\';
 
     public function __call($name, $params = null)
     {
-        return $this->checkService($name) ?? null;
+        return $this->service_exists($name) ?? null;
     }
 
-    private function checkService($name)
+    private function service_exists($name)
     {
         $calledService = $this->baseService . ucfirst($name) . 'Service';
 

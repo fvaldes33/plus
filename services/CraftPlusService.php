@@ -18,7 +18,7 @@ class CraftPlusService extends BaseApplicationComponent
     }
 
     /**
-     * SyncDb
+     * Log Data
      *
      * @return void
      */
