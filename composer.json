@@ -1,0 +1,8 @@
+{
+    "name": "craft/craft-plus",
+    "autoload": {},
+    "config": {
+        "vendor-dir": "vendor",
+        "preferred-install" : "dist"
+    }
+}
