@@ -1,9 +1,9 @@
-![CraftPlus](http://i.imgur.com/WOyDB0x.png)
+![Plus](http://i.imgur.com/r3EwP1W.png)
 
 ![Craft](https://img.shields.io/badge/craft-v2.6-red.svg) ![PHP](https://img.shields.io/badge/php-v7.0-blue.svg)
 
-CraftPlus adds an easy to use way of attaching behaviors to your elements using Craft's own $element->attachBehavior() method. 
-In addition CraftPlus adds a useful global variable 'plus' that will expose all available services you create within the CraftPlus\Services namespace.
+Plus (for CraftCMS) adds an easy to use way of attaching behaviors to your elements using Craft's own $element->attachBehavior() method. 
+In addition Plus adds a useful global variable 'plus' that will expose all available services you create within the Plus\Services namespace.
 
 It's maintained by [Franco Valdes](https://github.com/fvaldes33).
 
@@ -15,13 +15,13 @@ It's maintained by [Franco Valdes](https://github.com/fvaldes33).
 
 ### Installation
 
-To install CraftPlus, just follow these steps:
+To install Plus, just follow these steps:
 
-1. Upload the craftplus/ folder to your craft/plugins/ folder.
+1. Upload the Plus/ folder to your craft/plugins/ folder.
 2. Go to Settings > Plugins from your Craft control panel.
-3. Enable the CraftPlus plugin and DONE.
+3. Enable the Plus plugin and DONE.
 
-On install, CraftPlus will copy over the Plus directory into your config directory.
+On install, Plus will copy over the install/plus directory into your config directory.
 This allows you to create your own behaviors and services outside of the plugin itself 
 as all it does is attach the behaviors you create. 
 
@@ -45,7 +45,7 @@ Folder Structure:
 Log Service is for basic debugging. 
 Usage: 
 - Twig: {{ plus.log.write(key, value) }}
-- PHP: craft()->craftPlus->log('hello', 'world');
+- PHP: craft()->plus->log('hello', 'world');
 
 ### How does it work?
 
@@ -68,7 +68,7 @@ To learn about eager loading check this out https://craftcms.com/docs/templating
 
 ## Feature Requests & Issues
 
-If you need a feature, let me know and I'll add it as soon as reasonably possible. CraftPlus is actively maintained, and I accept relevant, feature-adding pull requests. If you encounter any issues, please open an issue and I'll work with you and patch the problem. Thanks!
+If you need a feature, let me know and I'll add it as soon as reasonably possible. Plus is actively maintained, and I accept relevant, feature-adding pull requests. If you encounter any issues, please open an issue and I'll work with you and patch the problem. Thanks!
 
 
 ## Feature Roadmap

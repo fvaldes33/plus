@@ -10,10 +10,10 @@ class PlusService extends BaseApplicationComponent
 
     public function variables()
     {
-        if (isset($this->classes['CraftPlusVariable'])){
-            return $this->classes['CraftPlusVariable'];
+        if (isset($this->classes['PlusVariable'])){
+            return $this->classes['PlusVariable'];
         } else {
-            return $this->classes['CraftPlusVariable'] = new CraftPlusVariable;
+            return $this->classes['PlusVariable'] = new PlusVariable;
         }
     }
 
