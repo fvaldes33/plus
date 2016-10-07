@@ -1,11 +1,11 @@
 <?php
 namespace Craft;
 
-class CraftPlus_LogRecord extends BaseRecord
+class Plus_LogRecord extends BaseRecord
 {
     public function getTableName()
     {
-        return 'craftplus_log';
+        return 'plus_log';
     }
 
     protected function defineAttributes()

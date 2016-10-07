@@ -1,5 +1,5 @@
 <?php
-namespace CraftPlus\Behaviors\Categories;
+namespace Plus\Behaviors\Entries;
 
 use CBehavior;
 use Craft;
@@ -7,7 +7,7 @@ use Craft\ElementType;
 
 use function Craft\craft;
 
-class BaseCategoryBehavior extends CBehavior
+class BaseEntryBehavior extends CBehavior
 {
 
 }

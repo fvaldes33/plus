@@ -1,6 +1,6 @@
 <?php namespace Craft;
 
-class CraftPlusPlugin extends BasePlugin
+class PlusPlugin extends BasePlugin
 {
 
     // =========================================================================
@@ -8,7 +8,7 @@ class CraftPlusPlugin extends BasePlugin
     // =========================================================================
     public function getName()
     {
-        return Craft::t('Craft Plus');
+        return Craft::t('Plus');
     }
 
     public function getVersion()
@@ -23,22 +23,22 @@ class CraftPlusPlugin extends BasePlugin
 
     public function getDeveloper()
     {
-        return 'Franco Valdes | Union';
+        return 'Franco Valdes';
     }
 
     public function getDeveloperUrl()
     {
-        return 'http://union.co';
+        return 'https://github.com/fvaldes33';
     }
 
     public function getPluginUrl()
     {
-        return 'http://union.co';
+        return 'https://github.com/fvaldes33/plus';
     }
 
     public function getDocumentationUrl()
     {           
-        return $this->getPluginUrl() . '/hidden/craft-plus/README.md';
+        return $this->getPluginUrl() . '/blob/master/readme.md';
     }
 
     // =========================================================================
@@ -47,7 +47,7 @@ class CraftPlusPlugin extends BasePlugin
     public function onPopulateElement()
     {
         craft()->on('elements.onPopulateElement', function(Event $event) {
-            craft()->craftPlus->onPopulateElement($event);
+            craft()->plus->onPopulateElement($event);
         });
     }
 
@@ -56,7 +56,7 @@ class CraftPlusPlugin extends BasePlugin
     // =========================================================================
     public function addTwigExtension()
     {
-        Craft::import('plugins.craftplus.twigextensions.TwigExtensions');
+        Craft::import('plugins.plus.twigextensions.TwigExtensions');
 
         return new TwigExtensions();
     }
@@ -78,7 +78,7 @@ class CraftPlusPlugin extends BasePlugin
         if (!IOHelper::folderExists(CRAFT_BASE_PATH . 'config/plus')){
             try {
                 IOHelper::createFolder(CRAFT_BASE_PATH . 'config/plus');
-                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'craftplus/install/plus', CRAFT_BASE_PATH . 'config/plus');
+                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'plus/install/plus', CRAFT_BASE_PATH . 'config/plus');
             } catch(Exception $e) {
                 $error = $this->getName() . ' encountered an error while moving files.';
                 craft()->userSession->setNotice($error);
@@ -104,8 +104,8 @@ class CraftPlusPlugin extends BasePlugin
 
         // Only handle behaviors outside of CP
         if (!craft()->request->isCpRequest()) {
-            $loader = require CRAFT_PLUGINS_PATH . '/craftplus/vendor/autoload.php';
-            $loader->addPsr4('CraftPlus\\', CRAFT_BASE_PATH . 'config/plus');
+            $loader = require CRAFT_PLUGINS_PATH . '/plus/vendor/autoload.php';
+            $loader->addPsr4('Plus\\', CRAFT_BASE_PATH . 'config/plus');
             
             $this->onPopulateElement();    
         }

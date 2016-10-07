@@ -1,12 +1,12 @@
 <?php
 namespace Craft;
 
-use CraftPlus;
+use Plus;
 
-class CraftPlusService extends BaseApplicationComponent
+class PlusService extends BaseApplicationComponent
 {
     private $classes = [];
-    protected static $baseBehaviorName = 'CraftPlus\\Behaviors\\';
+    protected static $baseBehaviorName = 'Plus\\Behaviors\\';
 
     public function variables()
     {
@@ -24,7 +24,7 @@ class CraftPlusService extends BaseApplicationComponent
      */
     public function log($key, $data)
     {
-        $logger = new CraftPlus\Services\LogService;
+        $logger = new Plus\Services\LogService;
         $logger->write($key, $data);
     }
 
@@ -163,7 +163,7 @@ class CraftPlusService extends BaseApplicationComponent
         ];
 
         $content = "<?php 
-namespace CraftPlus\Behaviors\\". $type . "
+namespace Plus\Behaviors\\". $type . "
 
 use CBehavior;
 use Craft;

@@ -1,5 +1,5 @@
 {
-    "name": "craft/craft-plus",
+    "name": "craft/plus",
     "autoload": {},
     "config": {
         "vendor-dir": "vendor",

@@ -1,5 +1,5 @@
 <?php
-namespace CraftPlus\Behaviors\Entries;
+namespace Plus\Behaviors\MatrixBlocks;
 
 use CBehavior;
 use Craft;
@@ -7,7 +7,7 @@ use Craft\ElementType;
 
 use function Craft\craft;
 
-class BaseEntryBehavior extends CBehavior
+class BaseMatrixBlocksBehavior extends CBehavior
 {
 
 }

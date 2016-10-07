@@ -1,5 +1,5 @@
 <?php
-namespace CraftPlus\Behaviors\Globals;
+namespace Plus\Behaviors\Categories;
 
 use CBehavior;
 use Craft;
@@ -7,7 +7,7 @@ use Craft\ElementType;
 
 use function Craft\craft;
 
-class BaseGlobalsBehavior extends CBehavior
+class BaseCategoryBehavior extends CBehavior
 {
 
 }

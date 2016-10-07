@@ -1,5 +1,5 @@
 <?php
-namespace CraftPlus\Behaviors\Entries;
+namespace Plus\Behaviors\Entries;
 
 use CBehavior;
 use Craft;

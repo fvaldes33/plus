@@ -1,10 +1,10 @@
 <?php
 namespace Craft;
 
-class CraftPlusVariable
+class PlusVariable
 {
     private $classes = [];
-    protected $baseService = 'CraftPlus\\Services\\';
+    protected $baseService = 'Plus\\Services\\';
 
     public function __call($name, $params = null)
     {

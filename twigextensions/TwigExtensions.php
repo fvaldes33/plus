@@ -23,7 +23,7 @@ class TwigExtensions extends Twig_Extension
     {
         $this->env = $env;
 
-        $env->addGlobal('plus', craft()->craftPlus->variables());
+        $env->addGlobal('plus', craft()->plus->variables());
     }
 
     public function getFilters()

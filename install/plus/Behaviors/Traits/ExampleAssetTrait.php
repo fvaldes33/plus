@@ -1,5 +1,5 @@
 <?php
-namespace CraftPlus\Behaviors\Traits;
+namespace Plus\Behaviors\Traits;
 
 use Exception;
 

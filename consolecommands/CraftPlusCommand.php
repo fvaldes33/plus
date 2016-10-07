@@ -1,6 +1,6 @@
 <?php namespace Craft;
 
-class CraftPlusCommand extends BaseCommand
+class PlusCommand extends BaseCommand
 {
     private $elementTypeMap = [
         'Entry' => 'Entries',

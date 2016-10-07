@@ -1,5 +1,5 @@
 <?php 
-namespace CraftPlus\Services;
+namespace Plus\Services;
 
 use Craft;
 use function Craft\craft;
@@ -17,7 +17,7 @@ class LogService
             $data = print_r($data, true);
         }
 
-        $logRecord                        = new Craft\CraftPlus_LogRecord();
+        $logRecord                        = new Craft\Plus_LogRecord();
         $logRecord->key                   = $key;
         $logRecord->data                  = $data;
         $logRecord->request_uri           = $requestUri;
