@@ -21,7 +21,7 @@ To install Plus, just follow these steps:
 2. Go to Settings > Plugins from your Craft control panel.
 3. Enable the Plus plugin and DONE.
 
-On install, Plus will copy over the install/plus directory into your config directory.
+On install, Plus will copy over the install/plus directory into your root directory.
 This allows you to create your own behaviors and services outside of the plugin itself 
 as all it does is attach the behaviors you create. 
 
