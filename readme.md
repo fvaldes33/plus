@@ -59,8 +59,11 @@ On the services end, we expose a plus global twig variable that has access to al
 CraftCMS ships with a "Homepage" section so we've decided to ship with an example "HomepageBehavior" so that you can see how it works. It is quite straight forward, for each section you wish to attach behaviors to simply create a behavior with the same name (+ the word behavior) inside it's element types directory. 
 
 ==UPDATE==
+
 Every public method inside this newly created behavior will be available in your templates attached to the handle you have attached it to.
-Take a look at this https://craftcms.com/classreference/etc/behaviors/BaseBehavior for more information about behaviors. In short, behaviors are methods that will be attached to your [entry, matrix, category, globals] models on the fly. Saying that if you need a entry.loadsomethingfaster() in your template you can easily add that method inside the element you are trying to use it on. For a more resuable case, use traits or add methods to the Base[ElementType]Behavior.php instead.
+Take a look at this https://craftcms.com/classreference/etc/behaviors/BaseBehavior for more information about behaviors. 
+
+In short, behaviors are methods that will be attached to your [entry, matrix, category, globals] models on the fly. Saying that if you need a {% set array = entry.loadsomethingfaster %} in your template you can easily add that method inside the element you are trying to use it on. For a more resuable case, use traits or add methods to the Base[ElementType]Behavior.php instead.
 
 ### Example
 
