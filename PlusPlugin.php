@@ -75,10 +75,10 @@ class PlusPlugin extends BasePlugin
             return false;
         }
 
-        if (!IOHelper::folderExists(CRAFT_BASE_PATH . 'config/plus')){
+        if (!IOHelper::folderExists(CRAFT_BASE_PATH . 'plus')){
             try {
-                IOHelper::createFolder(CRAFT_BASE_PATH . 'config/plus');
-                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'plus/install/plus', CRAFT_BASE_PATH . 'config/plus');
+                IOHelper::createFolder(CRAFT_BASE_PATH . 'plus');
+                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'plus/install/plus', CRAFT_BASE_PATH . 'plus');
             } catch(Exception $e) {
                 $error = $this->getName() . ' encountered an error while moving files.';
                 craft()->userSession->setNotice($error);
@@ -86,7 +86,7 @@ class PlusPlugin extends BasePlugin
                 return false;
             }
         } else {
-            $error = 'A "Plus" folder already exist in "'. CRAFT_BASE_PATH .'/config". We rather not overrite your stuff.';
+            $error = 'A "Plus" folder already exist in "'. CRAFT_BASE_PATH .'". We rather not overrite your stuff.';
             craft()->userSession->setNotice($error);
 
             return true;
@@ -105,7 +105,7 @@ class PlusPlugin extends BasePlugin
         // Only handle behaviors outside of CP
         if (!craft()->request->isCpRequest()) {
             $loader = require CRAFT_PLUGINS_PATH . '/plus/vendor/autoload.php';
-            $loader->addPsr4('Plus\\', CRAFT_BASE_PATH . 'config/plus');
+            $loader->addPsr4('Plus\\', CRAFT_BASE_PATH . 'plus');
             
             $this->onPopulateElement();    
         }

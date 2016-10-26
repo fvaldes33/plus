@@ -11,10 +11,17 @@ class HomepageBehavior extends BaseEntryBehavior
 {
     public function example()
     {
+        /*
+         * Template usage {{ entry.example }}
+         */
+        
+        /* Handle on the entry model */
         $model = clone($this->getOwner());
         
+        /* Handle on the field `body` */
         $criteria = $model->body;
 
-        return $model->body;
+        /* For the example's sake, just returning the field */
+        return $criteria;
     }
 }
