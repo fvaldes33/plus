@@ -65,6 +65,8 @@ Take a look at this https://craftcms.com/classreference/etc/behaviors/BaseBehavi
 
 In short, behaviors are methods that will be attached to your [entry, matrix, category, globals] models on the fly. Saying that if you need a {% set array = entry.loadsomethingfaster %} in your template you can easily add that method inside the element you are trying to use it on. For a more resuable case, use traits or add methods to the Base[ElementType]Behavior.php instead.
 
+New example added to HomepageBehavior.php to show how to eager load fields across channels and matrix block fields.
+
 ### Example
 
 Your blog channel section has a gallery and you want to eager load the assets needed to populate that page. Perfect! You would create a BlogBehavior.php file (extend the BaseEntryBehavior as showed on the Homepage example) and add a method to help you eager load those assets. In the hopes of clean and reusable code, if any of these behaviors are common, create a Trait and just use that OR you can add a method directly to the Basebehavior class itself.
