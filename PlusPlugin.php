@@ -78,7 +78,7 @@ class PlusPlugin extends BasePlugin
         if (!IOHelper::folderExists(CRAFT_BASE_PATH . 'plus')){
             try {
                 IOHelper::createFolder(CRAFT_BASE_PATH . 'plus');
-                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'plus/install/plus', CRAFT_BASE_PATH . 'plus');
+                IOHelper::copyFolder(CRAFT_PLUGINS_PATH . 'plus/install/plus', CRAFT_BASE_PATH . 'plus/');
             } catch(Exception $e) {
                 $error = $this->getName() . ' encountered an error while moving files.';
                 craft()->userSession->setNotice($error);
