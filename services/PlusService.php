@@ -86,7 +86,7 @@ class PlusService extends BaseApplicationComponent
                 }
 
                 if (!$behaviorAdded) {
-                    $baseBehaviorName = static::$baseBehaviorName . 'Entries\BaseCategoryBehavior';
+                    $baseBehaviorName = static::$baseBehaviorName . 'Categories\BaseCategoryBehavior';
 
                     $element->attachBehavior('Categories.Base', new $baseBehaviorName);    
                 }
