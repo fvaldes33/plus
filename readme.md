@@ -46,6 +46,10 @@ Log Service is for basic debugging.
 Usage: 
 - Twig: {{ plus.log.write(key, value) }}
 - PHP: craft()->plus->log('hello', 'world');
+- PHP: plus()->log('hello', 'world');
+
+In addition, now the plus() function has access to all services in the Plus\Services namespace by simply calling it after plus;
+    - plus()->[serviceName]->[serviceMethod]([params]);
 
 ### How does it work?
 
