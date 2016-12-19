@@ -48,7 +48,7 @@ Usage:
 - PHP: craft()->plus->log('hello', 'world');
 - PHP: plus()->log('hello', 'world');
 
-In addition, now the plus() function has access to all services in the Plus\Services namespace by simply calling it after plus.
+In addition, now the plus() function has access to all services in the Plus\Services namespace by simply calling it after plus. If outside the craft namespace be sure to add ```use function Craft\plus```.
 - PHP
     - plus()->[serviceName]->[serviceMethod]([params]);
 
