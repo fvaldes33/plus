@@ -13,12 +13,12 @@ class PlusPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.0.0';
+        return '1.0.5';
     }
 
     public function getSchemaVersion()
     {
-        return '1.0.0';
+        return '1.0.5';
     }
 
     public function getDeveloper()
@@ -110,4 +110,12 @@ class PlusPlugin extends BasePlugin
             $this->onPopulateElement();    
         }
     }
+}
+
+/**
+ * @return PlusService
+ */
+function plus()
+{
+    return Craft::app()->getComponent('plus');
 }

@@ -6,15 +6,21 @@ use Plus;
 class PlusService extends BaseApplicationComponent
 {
     private $classes = [];
+    private $services = [];
+    protected static $baseServicePath = 'Plus\\Services\\';
     protected static $baseBehaviorName = 'Plus\\Behaviors\\';
 
-    public function variables()
+    public function __get(string $name)
     {
-        if (isset($this->classes['PlusVariable'])){
-            return $this->classes['PlusVariable'];
+        $calledService = static::$baseServicePath . ucfirst($name) . 'Service';
+        
+        if (isset($this->services[$name])) {
+            return $this->services[$name];
         } else {
-            return $this->classes['PlusVariable'] = new PlusVariable;
+            return $this->services[$name] = new $calledService;
         }
+
+        return false;
     }
 
     /**

@@ -3,6 +3,7 @@ namespace Plus\Services;
 
 use Craft;
 use function Craft\craft;
+use function Craft\plus;
 
 class LogService
 {
