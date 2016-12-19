@@ -75,10 +75,12 @@ Usage:
 to call the write method inside the log service class you would
 ```
 use function Craft\plus
+
 plus()->log->write()
+plus()->[serviceName]->[serviceMethod]();
 ```
 
-Just like the plug variable, plus() has access to every class inside the Plus\Services namespace.
+Just like the plus variable, plus() has access to every class inside the Plus\Services namespace.
 
 ### Example
 
