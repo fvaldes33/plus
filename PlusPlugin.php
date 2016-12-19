@@ -102,11 +102,12 @@ class PlusPlugin extends BasePlugin
     {
         parent::init();
 
+        /* Load Plus */
+        $loader = require CRAFT_PLUGINS_PATH . '/plus/vendor/autoload.php';
+        $loader->addPsr4('Plus\\', CRAFT_BASE_PATH . 'plus');
+
         // Only handle behaviors outside of CP
         if (!craft()->request->isCpRequest()) {
-            $loader = require CRAFT_PLUGINS_PATH . '/plus/vendor/autoload.php';
-            $loader->addPsr4('Plus\\', CRAFT_BASE_PATH . 'plus');
-            
             $this->onPopulateElement();    
         }
     }
