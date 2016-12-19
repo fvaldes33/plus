@@ -23,6 +23,15 @@ class PlusService extends BaseApplicationComponent
         return false;
     }
 
+    public function variables()
+    {
+        if (isset($this->classes['PlusVariable'])){
+            return $this->classes['PlusVariable'];
+        } else {
+            return $this->classes['PlusVariable'] = new PlusVariable;
+        }
+    }
+    
     /**
      * Log Data
      *
