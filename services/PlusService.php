@@ -3,6 +3,15 @@ namespace Craft;
 
 use Plus;
 
+/**
+ * PlusService is helper class serving common Plus framework functionality.
+ *
+ * It also defines the global plus() method, which is a wrapper for all Plus Services.
+ *
+ * @author    Franco Valdes https://github.com/fvaldes33
+ * @since     1.0
+ */
+
 class PlusService extends BaseApplicationComponent
 {
     private $services = [];

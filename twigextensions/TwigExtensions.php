@@ -5,6 +5,13 @@ use Twig_Environment;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
 
+/**
+ * TwigExtensions is helper class serving a global plus variable available in twig templates
+ *
+ * @author    Franco Valdes https://github.com/fvaldes33
+ * @since     1.0
+ */
+
 class TwigExtensions extends Twig_Extension
 {
     protected $env;

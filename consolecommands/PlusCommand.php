@@ -1,5 +1,11 @@
 <?php namespace Craft;
 
+/**
+ * PlusCommand is helper class to quickly create behaviors from the command line.
+ *
+ * @author    Franco Valdes https://github.com/fvaldes33
+ * @since     1.0
+ */
 class PlusCommand extends BaseCommand
 {
     private $elementTypeMap = [
