@@ -5,11 +5,15 @@ use Plus;
 
 class PlusService extends BaseApplicationComponent
 {
-    private $classes = [];
     private $services = [];
     protected static $baseServicePath = 'Plus\\Services\\';
     protected static $baseBehaviorName = 'Plus\\Behaviors\\';
 
+    /**
+     * Magic Method to __get and return a class
+     * @param $name [classname]
+     * @return class 
+     */
     public function __get(string $name)
     {
         $calledService = static::$baseServicePath . ucfirst($name) . 'Service';
@@ -23,33 +27,29 @@ class PlusService extends BaseApplicationComponent
         return false;
     }
 
-    public function variables()
+    /**
+     * Magic Method to __get and return a class
+     * @param $name [classname]
+     * @return class 
+     */
+    public function __call(string $name, array $params)
     {
-        if (isset($this->classes['PlusVariable'])){
-            return $this->classes['PlusVariable'];
+        $calledService = static::$baseServicePath . ucfirst($name) . 'Service';
+        
+        if (isset($this->services[$name])) {
+            return $this->services[$name];
         } else {
-            return $this->classes['PlusVariable'] = new PlusVariable;
+            return $this->services[$name] = new $calledService;
         }
+
+        return false;        
     }
     
-    /**
-     * Log Data
-     *
-     * @return void
-     */
-    public function log($key, $data)
-    {
-        $logger = new Plus\Services\LogService;
-        $logger->write($key, $data);
-    }
-
-
     /**
      * Create Behaviors
      *
      * @param $name BehaviorName
      * @param $type ElementType
-     *
      * @return bool
      */
     public function createBehavior($name, $type)
@@ -73,12 +73,10 @@ class PlusService extends BaseApplicationComponent
     
     }
 
-
     /**
      * On Populate Element Event Trigger
      *
      * @param $event EventModal
-     *
      * @return void
      */
     public function onPopulateElement(Event $event)
