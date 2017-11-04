@@ -19,7 +19,10 @@
         }
     },
     "support": {
-        "email": "franco.valdes89@gmail.com"
+        "email": "franco.valdes89@gmail.com",
+        "issues": "https://github.com/fvaldes33/plus/issues?state=open",
+        "source": "https://github.com/fvaldes33/plus/",
+        "docs": "https://github.com/fvaldes33/plus/"
     },
     "extra": {
         "handle": "plus",

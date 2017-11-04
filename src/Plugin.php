@@ -57,7 +57,8 @@ class Plugin extends BasePlugin
      * @var Union
      */
     public static $plugin;
-
+    public $documentationUrl = 'https://github.com/fvaldes33/plus';
+    
     // Public Methods
     // =========================================================================
 
