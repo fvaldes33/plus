@@ -1,8 +1,8 @@
 <?php
-namespace fvaldes\plus\twigextensions;
+namespace fvaldes33\plus\twigextensions;
 
 use Craft;
-use fvaldes\plus\Plugin;
+use fvaldes33\plus\Plugin;
 
 /**
  * Twig can be extended in many ways; you can add extra tags, filters, tests, operators,

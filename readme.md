@@ -74,8 +74,8 @@ Now that the core Plus plugin is installed and enabled you can start to extend t
     ```
     <?php 
     namespace union/behaviors/entries
-    use fvaldes\plus\Plugin; //if you need to access the core plugin
-    use fvaldes\plus\behaviors\entries\BaseEntryBehavior;
+    use fvaldes33\plus\Plugin; //if you need to access the core plugin
+    use fvaldes33\plus\behaviors\entries\BaseEntryBehavior;
     
     class HomeBehavior extends BaseEntryBehavior
     {
@@ -97,7 +97,7 @@ Now that the core Plus plugin is installed and enabled you can start to extend t
     
     use Craft;
     use craft\base\Component;
-    use fvaldes\plus\Plugin;
+    use fvaldes33\plus\Plugin;
     
     class QuoteService extends Component
     {
@@ -112,8 +112,8 @@ Now that the core Plus plugin is installed and enabled you can start to extend t
     ```
     <?php 
     namespace union/behaviors/entries
-    use fvaldes\plus\Plugin; //if you need to access the core plugin
-    use fvaldes\plus\behaviors\entries\BaseEntryBehavior;
+    use fvaldes33\plus\Plugin; //if you need to access the core plugin
+    use fvaldes33\plus\behaviors\entries\BaseEntryBehavior;
     
     class HomeBehavior extends BaseEntryBehavior
     {

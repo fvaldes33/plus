@@ -1,5 +1,5 @@
 <?php
-namespace fvaldes\plus\behaviors\traits;
+namespace fvaldes33\plus\behaviors\traits;
 
 trait AssetTrait
 {

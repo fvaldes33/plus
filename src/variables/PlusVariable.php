@@ -1,8 +1,8 @@
 <?php
-namespace fvaldes\plus\variables;
+namespace fvaldes33\plus\variables;
 
 use Craft;
-use fvaldes\plus\Plugin;
+use fvaldes33\plus\Plugin;
 
 /**
  * USAGE:: {{ craft.plus.[service].[method ]}}

@@ -1,10 +1,10 @@
 <?php
-namespace fvaldes\plus\behaviors\categories;
+namespace fvaldes33\plus\behaviors\categories;
 
 use Craft;
 use yii\base\Behavior;
-use fvaldes\plus\Plugin;
-use fvaldes\plus\behaviors\traits\AssetTrait;
+use fvaldes33\plus\Plugin;
+use fvaldes33\plus\behaviors\traits\AssetTrait;
 
 class BaseCategoryBehavior extends Behavior
 {

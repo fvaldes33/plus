@@ -7,7 +7,7 @@
  * @link      union.co
  * @copyright Copyright (c) 2017 UNION
  */
-namespace fvaldes\plus;
+namespace fvaldes33\plus;
 
 use craft\base\Model;
 

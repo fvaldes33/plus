@@ -8,11 +8,11 @@
  * @copyright Copyright (c) 2017 UNION
  */
 
-namespace fvaldes\plus\behaviors\assets;
+namespace fvaldes33\plus\behaviors\assets;
 
 use Craft;
 use yii\base\Behavior;
-use fvaldes\plus\Union;
+use fvaldes33\plus\Union;
 
 class BaseAssetBehavior extends Behavior
 {

@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2017 UNION
  */
 
-namespace fvaldes\plus;
+namespace fvaldes33\plus;
 
 use Craft;
 use craft\base\Plugin as BasePlugin;
@@ -83,13 +83,13 @@ class Plugin extends BasePlugin
          * out of the box.
          */
         $this->setComponents([
-            'behavior' => \fvaldes\plus\services\BehaviorService::class,
+            'behavior' => \fvaldes33\plus\services\BehaviorService::class,
         ]);
 
         /**
          * Base plus twig extension
          */
-        Craft::$app->view->twig->addExtension(new \fvaldes\plus\twigextensions\PlusTwigExtension());
+        Craft::$app->view->twig->addExtension(new \fvaldes33\plus\twigextensions\PlusTwigExtension());
 
         /**
          * Settings
@@ -137,7 +137,7 @@ class Plugin extends BasePlugin
             function (Event $event) use($variables) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('plus', \fvaldes\plus\variables\PlusVariable::class);
+                $variable->set('plus', \fvaldes33\plus\variables\PlusVariable::class);
 
                 if (isset($variables)) {
                     foreach ($variables as $n => $v) {

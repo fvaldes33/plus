@@ -1,9 +1,9 @@
 <?php
-namespace fvaldes\plus\behaviors\users;
+namespace fvaldes33\plus\behaviors\users;
 
 use Craft;
 use yii\base\Behavior;
-use fvaldes\plus\Plugin;
+use fvaldes33\plus\Plugin;
 
 class BaseUserBehavior extends Behavior
 {

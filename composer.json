@@ -1,5 +1,5 @@
 {
-    "name": "fvaldes/plus",
+    "name": "fvaldes33/plus",
     "version": "1.0.0",
     "description": "Add services, behaviors, variables and twig extensions to CraftCms.",
     "type": "craft-plugin",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "fvaldes\\plus\\": "src/"
+            "fvaldes33\\plus\\": "src/"
         }
     },
     "support": {
@@ -24,7 +24,7 @@
     "extra": {
         "handle": "plus",
         "name": "Craft Plus",
-        "class": "fvaldes\\plus\\Plugin",
+        "class": "fvaldes33\\plus\\Plugin",
         "developer": "Franco Valdes",
         "developerUrl": "https://github.com/fvaldes33"
     }

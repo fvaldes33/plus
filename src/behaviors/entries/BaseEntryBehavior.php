@@ -1,10 +1,10 @@
 <?php
-namespace fvaldes\plus\behaviors\entries;
+namespace fvaldes33\plus\behaviors\entries;
 
 use Craft;
 use yii\base\Behavior;
-use fvaldes\plus\Plugin;
-use fvaldes\plus\behaviors\traits\AssetTrait;
+use fvaldes33\plus\Plugin;
+use fvaldes33\plus\behaviors\traits\AssetTrait;
 
 class BaseEntryBehavior extends Behavior
 {

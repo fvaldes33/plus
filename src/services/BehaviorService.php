@@ -7,11 +7,11 @@
  * @link      union.co
  * @copyright Copyright (c) 2017 UNION
  */
-namespace fvaldes\plus\services;
+namespace fvaldes33\plus\services;
 
 use Craft;
 use craft\base\Component;
-use fvaldes\plus\Plugin;
+use fvaldes33\plus\Plugin;
 
 /**
  * Union Service
@@ -31,7 +31,7 @@ class BehaviorService extends Component
     /**
      * @var behaviors array
      */
-    protected static $baseBehaviorNamespace = 'fvaldes\\plus\\behaviors\\';
+    protected static $baseBehaviorNamespace = 'fvaldes33\\plus\\behaviors\\';
 
     /**
      * @var behaviors array
