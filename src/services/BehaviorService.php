@@ -1,40 +1,19 @@
 <?php
-/**
- * Union plugin for Craft CMS 3.x
- *
- * UNION.co Plugin
- *
- * @link      union.co
- * @copyright Copyright (c) 2017 UNION
- */
 namespace fvaldes33\plus\services;
 
 use Craft;
 use craft\base\Component;
 use fvaldes33\plus\Plugin;
 
-/**
- * Union Service
- *
- * All of your plugin’s business logic should go in services, including saving data,
- * retrieving data, etc. They provide APIs that your controllers, template variables,
- * and other plugins can interact with.
- *
- * https://craftcms.com/docs/plugins/services
- *
- * @author    UNION
- * @package   Union
- * @since     1.0.1
- */
 class BehaviorService extends Component
 {   
     /**
-     * @var behaviors array
+     * @var baseBehaviorNamespace string
      */
     protected static $baseBehaviorNamespace = 'fvaldes33\\plus\\behaviors\\';
 
     /**
-     * @var behaviors array
+     * @var behaviors string
      */
     protected $extraBehaviorNamespace;
 
@@ -55,7 +34,6 @@ class BehaviorService extends Component
 
     /**
      *  Register all behaviors
-     *  Usage | Union::$plugin->union->exampleService()
      *
      *  @param event array
      *  @return mixed
