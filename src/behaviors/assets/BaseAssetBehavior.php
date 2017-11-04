@@ -14,10 +14,7 @@ use Craft;
 use yii\base\Behavior;
 use fvaldes33\plus\Union;
 
-class BaseAssetBehavior extends Behavior
+class BaseAssetBehavior extends Behavior 
 {
-    public function _test()
-    {
-        return 'this is a test';
-    }
+    
 }

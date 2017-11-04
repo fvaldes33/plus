@@ -7,8 +7,5 @@ use fvaldes33\plus\Plugin;
 
 class BaseTagBehavior extends Behavior
 {
-    public function _test()
-    {
-        return 'this is a test';
-    }
+
 }

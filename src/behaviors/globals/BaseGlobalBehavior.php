@@ -9,9 +9,4 @@ use fvaldes33\plus\behaviors\traits\AssetTrait;
 class BaseGlobalBehavior extends Behavior
 {
     use AssetTrait;
-    
-    public function _test()
-    {
-        return 'this is a test';
-    }
 }
