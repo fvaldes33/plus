@@ -1,6 +1,5 @@
 {
     "name": "fvaldes33/plus",
-    "version": "1.0.0",
     "description": "Add services, behaviors, variables and twig extensions to CraftCms.",
     "type": "craft-plugin",
     "authors": [
