@@ -194,6 +194,10 @@ class BehaviorService extends Component
                 break;
 
             case 'matrixblock':
+                if (!isset($element->fieldId)) {
+                    break;
+                }
+                
                 $field = Craft::$app->getFields()->getFieldById($element->fieldId);
                 $behaviorBaseClass = static::$baseBehaviorNamespace . 'matrixblocks\\BaseMatrixBehavior';
                 $behaviorClassName = static::$baseBehaviorNamespace . 'matrixblocks\\' . ucFirst($field->handle) . 'Behavior';
