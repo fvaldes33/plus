@@ -2,7 +2,15 @@
 namespace fvaldes33\plus\services;
 
 use Craft;
+use yii\base\Event;
 use craft\base\Component;
+use craft\elements\Asset;
+use craft\elements\Category;
+use craft\elements\Entry;
+use craft\elements\GlobalSet;
+use craft\elements\MatrixBlock;
+use craft\elements\Tag;
+use craft\elements\User;
 use fvaldes33\plus\Plugin;
 
 class BehaviorService extends Component
@@ -33,6 +41,77 @@ class BehaviorService extends Component
     }
 
     /**
+     *  Listen to all possible element event init
+     *
+     *  @return void
+     */
+    public function listen()
+    {
+        Event::on(
+            Asset::class,
+            Asset::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            Category::class,
+            Category::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            Entry::class,
+            Entry::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            GlobalSet::class,
+            GlobalSet::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            MatrixBlock::class,
+            MatrixBlock::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            Tag::class,
+            Tag::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+
+        Event::on(
+            User::class,
+            User::EVENT_INIT,
+            function(Event $event) {
+                // attach stuff here
+                $this->register($event);
+            }
+        );
+    }
+
+    /**
      *  Register all behaviors
      *
      *  @param event array
@@ -40,7 +119,7 @@ class BehaviorService extends Component
      */
     public function register($event)
     {
-        $element = $event->element;
+        $element = $event->sender;
         $elementType = $element->refHandle();
 
         switch ($elementType) {
@@ -48,6 +127,15 @@ class BehaviorService extends Component
                 break;
 
             case 'category':
+                // This *should* be a temporary fix. Ticket open with craft about fixing this
+                if (isset($_POST['livePreview'])) {
+                    $element->groupId = $_POST['groupId'];
+                }
+
+                if (!isset($element->groupId)) {
+                    break;
+                }
+
                 $behaviorBaseClass = static::$baseBehaviorNamespace . 'categories\\BaseCategoryBehavior';
                 $behaviorClassName = static::$baseBehaviorNamespace . 'categories\\' . ucFirst($element->group->handle) . 'Behavior';
 
@@ -64,7 +152,16 @@ class BehaviorService extends Component
                 break;
 
             case 'entry':
-                $section = $element->section;
+                // This *should* be a temporary fix. Ticket open with craft about fixing this
+                if (isset($_POST['livePreview'])) {
+                    $element->sectionId = $_POST['sectionId'];
+                }
+
+                if (!isset($element->sectionId)) {
+                    break;
+                }
+
+                $section = $element->getSection();
                 $behaviorBaseClass = static::$baseBehaviorNamespace . 'entries\\BaseEntryBehavior';
                 $behaviorClassName = static::$baseBehaviorNamespace . 'entries\\' . ucFirst($section->handle) . 'Behavior';
 

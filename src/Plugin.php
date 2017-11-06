@@ -77,7 +77,7 @@ class Plugin extends BasePlugin
     {
         parent::init();
         self::$plugin = $this;
-
+        
         /**
          * Have to set at least this component to extend later
          * also comes with some base traits that can be used 
@@ -121,14 +121,17 @@ class Plugin extends BasePlugin
             }
         }
 
-        Event::on(
-            ElementQuery::class,
-            ElementQuery::EVENT_AFTER_POPULATE_ELEMENT,
-            function(PopulateElementEvent $event) {
-                // attach stuff here
-                $this->behavior->register($event);
-            }
-        );
+        $this->behavior->listen();
+
+        // Opting to move this to service
+        // Event::on(
+        //     ElementQuery::class,
+        //     ElementQuery::EVENT_AFTER_POPULATE_ELEMENT,
+        //     function(PopulateElementEvent $event) {
+        //         // attach stuff here
+        //         $this->behavior->register($event);
+        //     }
+        // );
 
         // Register our variables
         $variables = $this->getSettings()->variables;
@@ -156,14 +159,6 @@ class Plugin extends BasePlugin
                 if ($event->plugin === $this) {
                     // We were just installed
                 }
-            }
-        );
-
-        Event::on(
-            Entry::class,
-            Element::EVENT_AFTER_SAVE,
-            function (ModelEvent $event) {
-
             }
         );
 
