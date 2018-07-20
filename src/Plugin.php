@@ -90,7 +90,7 @@ class Plugin extends BasePlugin
         /**
          * Base plus twig extension
          */
-        Craft::$app->view->twig->addExtension(new \fvaldes33\plus\twigextensions\PlusTwigExtension());
+        Craft::$app->view->registerTwigExtension(new \fvaldes33\plus\twigextensions\PlusTwigExtension());
 
         /**
          * Settings
@@ -117,7 +117,7 @@ class Plugin extends BasePlugin
 
             $twigextension = $this->getSettings()->twigextension;
             if ($twigextension) {
-                Craft::$app->view->twig->addExtension(new $twigextension);    
+                Craft::$app->view->registerTwigExtension(new $twigextension);    
             }
         }
 
