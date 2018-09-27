@@ -129,7 +129,7 @@ class BehaviorService extends Component
             case 'category':
                 // This *should* be a temporary fix. Ticket open with craft about fixing this
                 if (isset($_POST['livePreview'])) {
-                    $element->groupId = $_POST['groupId'];
+                    $element->groupId = $_POST['groupId'] ?? null;
                 }
 
                 if (!isset($element->groupId)) {
@@ -154,7 +154,7 @@ class BehaviorService extends Component
             case 'entry':
                 // This *should* be a temporary fix. Ticket open with craft about fixing this
                 if (isset($_POST['livePreview'])) {
-                    $element->sectionId = $_POST['sectionId'];
+                    $element->sectionId = $_POST['sectionId'] ?? null;
                 }
 
                 if (!isset($element->sectionId)) {
